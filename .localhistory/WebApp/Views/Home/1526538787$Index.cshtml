@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using PagedList
+@using PagedList.Mvc
+@*@model IPagedList<Entites.Blog>odel
+    @model WebApp.ViewMode.CategoryBlogViewM*@
+
+@model Tuple<IPagedList<Entites.Blog>, List<Entites.Category>>
+
+<link href="~/Content/Handle/Index.css" rel="stylesheet" />
+<link href="~/Content/Handle/Category.css" rel="stylesheet" />
+
+<div class="row">
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <img src="~/Image/IRRELEVANT_LOGO.jpg" />
+                </p>
+            </div>
+            <!--soldaki kategori menüsü-->
+            <div class="row col-4">
+                <!-- Category -->
+                <div class="single category">
+                    <h3 class="side-title">Category</h3>
+                    <ul class="list-unstyled">
+                        @foreach (var item in Model.Item2)
+                        {
+                            <li><a href="/Blog/Edit/" title="">@item.Name <span class="pull-right">@item.Blogs.Count</span></a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <!--orta kısım-->
+            @foreach (var item in Model.Item2[0].Blogs)
+            {
+                <div class="row col-8">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 ">
+                            <div class="list-group">
+                                <h4><a href="/Blog/Read">@item.Title </a></h4>
+                                <p>@item.Content</p>
+                                <div class="list-group-item">
+                                    <div class="row-picture">
+                                        <a href="#" title="sintret">
+                                            <img class="circle img-thumbnail img-box" src="http://sintret.com/img/andy.jpg" alt="sintret">
+                                        </a>
+                                    </div>
+                                    <div class="row-content">
+                                        <div class="list-group-item-heading">
+                                            <a href="#" title="sintret">
+                                                <small>sintret</small>
+                                            </a>
+                                        </div>
+                                        <small>
+                                            <i class="glyphicon glyphicon-time"></i> 3 days ago via  - @item.ViewCount kez okundu <span class="twitter"> <i class="fa fa-twitter"></i> <a target="_blank" href="https://twitter.com/sintret" alt="sintret" title="sintret">sintret</a></span>
+                                            <br>
+                                            <span class="explore"><i class="glyphicon glyphicon-th"></i> <a href="#">Explore 2 places </a></span>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            <table class="table">
+                <tr>
+                    <th>
+                        Adı
+                    </th>
+                    <th>
+                        Fiyatı
+                    </th>
+                    <th>
+                        Yazar
+                    </th>
+                </tr>
+                @foreach (var item in Model.Item1)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.KeyWords)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Content)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ViewCount)
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <div class=" row offset-2 pagination offset-2">
+                @Html.PagedListPager(Model.Item1, sayfa => Url.Action("/Index", new { sayfa }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+            </div>
+
+        </div>
+    </div>
+
+</div>

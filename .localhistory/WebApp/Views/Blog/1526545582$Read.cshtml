@@ -1,0 +1,22 @@
+﻿@model WebApp.ViewMode.CategoryBlogViewModel
+@using HtmlAgilityPack
+
+@{
+            ViewBag.Title = "Read";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="offset-1 col-md-10 blogShort offset-1">
+    <h1>@Model.Blog.Title</h1>
+    <article>
+        <p>
+            @{
+                var doc = new HtmlDocument();
+                doc.LoadHtml("<br/>kartal atar mı <br/>");
+            }
+                 4   
+                </p>
+            </article>
+
+        </div>
+

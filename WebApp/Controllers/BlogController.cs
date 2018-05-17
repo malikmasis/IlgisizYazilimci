@@ -7,7 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Entites;
+using HtmlAgilityPack;
 using WebApp.Models;
+using WebApp.ViewMode;
 
 namespace WebApp.Controllers
 {
@@ -28,12 +30,12 @@ namespace WebApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Blog blog = db.Blogs.Find(id);
-            if (blog == null)
-            {
-                return HttpNotFound();
-            }
-            return View(blog);
+            //Blog blog = db.Blogs.Find(id);
+            //if (blog == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            return View(HomeController.kitaplar.Where(p => p.Id == id).FirstOrDefault());
         }
 
         // GET: Blog/Create
@@ -109,6 +111,29 @@ namespace WebApp.Controllers
             db.Blogs.Remove(blog);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Edit2()
+        {
+            return View();
+        }
+        public ActionResult View2()
+        {
+            return View();
+        }
+        public ActionResult Read(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CategoryBlogViewModel userVM = new CategoryBlogViewModel();
+            userVM.Blog = HomeController.kitaplar.Where(p => p.Id == id).FirstOrDefault();
+            return View(userVM);
+        }
+        public ActionResult Create2()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)

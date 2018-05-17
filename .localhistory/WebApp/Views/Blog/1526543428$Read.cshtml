@@ -1,0 +1,19 @@
+﻿@model WebApp.ViewMode.CategoryBlogViewModel
+
+@{
+    ViewBag.Title = "Read";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="offset-1 col-md-10 blogShort offset-1">
+    <h1>Title 1</h1>
+    <img src="http://joern-duwe.de/aquaristik/images/skalare00.jpg" alt="post img" class="pull-left img-responsive postImg img-thumbnail margin10">
+    <article>
+        <p>
+            başlık -- @Model.Blog.Title<hr/>
+            içerik -- @Model.Blog.Content
+        </p>
+    </article>
+
+</div>
+

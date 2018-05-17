@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="~/Content/Handle/Footer.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="offset-1"></div>
+            <a class="navbar-brand" href="/Home/Index">Ana Sayfa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/About">Hakkımızda<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Contact">İletişim</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Blog/Create">Blog Oluştur</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Ara" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Ara</button>
+                </form>
+            </div>
+</nav>
+
+
+    @RenderBody()
+
+    <hr />
+
+    <footer>
+
+        <!------ Include the above in your HEAD tag ---------->
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <div class="row text-center text-xs-center text-sm-left text-md-left">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Quick links</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                            <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                        <p>National Transaction Corporation is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
+                        <p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    
+</body>
+</html>

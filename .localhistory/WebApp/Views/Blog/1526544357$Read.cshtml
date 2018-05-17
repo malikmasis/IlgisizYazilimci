@@ -1,0 +1,18 @@
+﻿@model WebApp.ViewMode.CategoryBlogViewModel
+@using Microsoft.TeamFoundation.
+
+@{
+            ViewBag.Title = "Read";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="offset-1 col-md-10 blogShort offset-1">
+    <h1>@Model.Blog.Title</h1>
+    <article>
+        <p>
+            HtmlFilter.ConvertToPlainText(Model.Blog.Content)
+        </p>
+    </article>
+
+</div>
+
